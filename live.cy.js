@@ -27,6 +27,7 @@ describe('day 6', async() => {
 
         });
         cy.wrap(optionArray).should('include.members', expectedSkills);
-        // await expect(optionArray).to.include(expectedSkills)
+        await expect(optionArray).to.include(expectedSkills)
   });
+  /////// this is update
 });
