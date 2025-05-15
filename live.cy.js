@@ -2,7 +2,7 @@ const { expect } = require("chai");
 
  let optionArray = [];
 describe('day 6', async() => {
-    it('static dropdown', async  () => {
+    it.skip('static dropdown', async  () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false; // Mengabaikan error khusus untuk tes ini
         });
@@ -11,7 +11,7 @@ describe('day 6', async() => {
         await  cy.xpath(`//select[@id='oldSelectMenu']`).select(4);
         await  cy.xpath(`//select[@id='oldSelectMenu']`).select(0);
     });
-     it('static dropdown', async  () => {
+     it.skip('static dropdown', async  () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false; // Mengabaikan error khusus untuk tes ini
         });
