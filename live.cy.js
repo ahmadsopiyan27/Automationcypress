@@ -3,8 +3,10 @@ describe('day 6', async() => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false; // Mengabaikan error khusus untuk tes ini
         });
-        cy.visit('https://demo.automationtesting.in/Register.html')
-        cy.xpath(`//select[@id='Skills']`).select(5);
+        // cy.visit('https://demo.automationtesting.in/Register.html')
+        await cy.visit('https://demoqa.com/select-menu')
+        await  cy.xpath(`//select[@id='oldSelectMenu']`).select(4);
+        await  cy.xpath(`//select[@id='oldSelectMenu']`).select(0);
 
         
     })
