@@ -30,4 +30,13 @@ describe('day 6', async() => {
         // await expect(optionArray).to.include(expectedSkills)
   });
   /////// this is update
+  it('dyanmic looping', async  () => {
+        cy.on('uncaught:exception', (err, runnable) => {
+            return false; // Mengabaikan error khusus untuk tes ini
+        });
+    await cy.visit('https://demo.automationtesting.in/Register.html');
+    await cy.wait(5000);
+    await cy.get('#Skills').select(4)
+    
+  })
 });
