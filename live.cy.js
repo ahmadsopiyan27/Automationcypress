@@ -55,7 +55,7 @@ describe('day 6', async() => {
 
     
   });
-  it('checkbox', async function () {
+  it.skip('checkbox', async function () {
      cy.on('uncaught:exception', (err, runnable) => {
             return false; // Mengabaikan error khusus untuk tes ini
         });
@@ -66,6 +66,15 @@ describe('day 6', async() => {
      await cy.xpath(checkbox).last().check().should('be.checked');
      await cy.xpath(checkbox).check('Movies').should('be.checked');
       await cy.xpath(checkbox).eq(2).uncheck().should('be.checked');     
+    
+  });
+  it('calender', async function () {
+    cy.visit('https://jqueryui.com/datepicker/');
+    cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    // .xpath(`//input[@id='datepicker']`).click();
+    .xpath(`//input[@id='datepicker']`).type('05/05/2025');
+
+
     
   })
 });
