@@ -70,9 +70,21 @@ describe('day 6', async() => {
   });
   it('calender', async function () {
     cy.visit('https://jqueryui.com/datepicker/');
-    cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
-    // .xpath(`//input[@id='datepicker']`).click();
-    .xpath(`//input[@id='datepicker']`).type('05/05/2025');
+
+    // langsung type
+    // cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    // .xpath(`//input[@id='datepicker']`).type('05/05/2025');
+    // // .xpath(`//input[@id='datepicker']`).click();
+
+    // untuk interact sama calender
+cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    .xpath(`//input[@id='datepicker']`).click();
+
+     cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    .xpath(`//a[@class='ui-datepicker-prev ui-corner-all']`).click();
+
+     cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    .xpath(`//a[@class='ui-state-default' and text()='12']`).click();
 
 
     
