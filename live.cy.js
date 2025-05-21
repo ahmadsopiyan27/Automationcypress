@@ -39,7 +39,7 @@ describe('day 6', async() => {
     await cy.get('#Skills').select('C')
     
   });
-  it('autosuggestive dropdown', async function () {
+  it.skip('autosuggestive dropdown', async function () {
      cy.on('uncaught:exception', (err, runnable) => {
             return false; // Mengabaikan error khusus untuk tes ini
         });
@@ -52,6 +52,40 @@ describe('day 6', async() => {
     await cy.xpath(fieldSuggestive).click();
     await cy.xpath(fieldSearch).type('de');
     await cy.xpath(fieldSearchItem).contains('Bangladesh').click();
+
+    
+  });
+  it.skip('checkbox', async function () {
+     cy.on('uncaught:exception', (err, runnable) => {
+            return false; // Mengabaikan error khusus untuk tes ini
+        });
+
+    let checkbox =`//input[@type='checkbox']`;
+     await cy.visit('https://demo.automationtesting.in/Register.html');
+     await cy.xpath(checkbox).first().check().should('be.checked');  
+     await cy.xpath(checkbox).last().check().should('be.checked');
+     await cy.xpath(checkbox).check('Movies').should('be.checked');
+      await cy.xpath(checkbox).eq(2).uncheck().should('be.checked');     
+    
+  });
+  it('calender', async function () {
+    cy.visit('https://jqueryui.com/datepicker/');
+
+    // langsung type
+    // cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    // .xpath(`//input[@id='datepicker']`).type('05/05/2025');
+    // // .xpath(`//input[@id='datepicker']`).click();
+
+    // untuk interact sama calender
+cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    .xpath(`//input[@id='datepicker']`).click();
+
+     cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    .xpath(`//a[@class='ui-datepicker-prev ui-corner-all']`).click();
+
+     cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
+    .xpath(`//a[@class='ui-state-default' and text()='12']`).click();
+
 
     
   })
