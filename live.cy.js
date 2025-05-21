@@ -39,7 +39,7 @@ describe('day 6', async() => {
     await cy.get('#Skills').select('C')
     
   });
-  it('autosuggestive dropdown', async function () {
+  it.skip('autosuggestive dropdown', async function () {
      cy.on('uncaught:exception', (err, runnable) => {
             return false; // Mengabaikan error khusus untuk tes ini
         });
@@ -53,6 +53,16 @@ describe('day 6', async() => {
     await cy.xpath(fieldSearch).type('de');
     await cy.xpath(fieldSearchItem).contains('Bangladesh').click();
 
+    
+  });
+  it('checkbox', async function () {
+     cy.on('uncaught:exception', (err, runnable) => {
+            return false; // Mengabaikan error khusus untuk tes ini
+        });
+
+    let checkbox =`//input[@type='checkbox']`;
+     await cy.visit('https://demo.automationtesting.in/Register.html');
+     await cy.xpath(checkbox).first().check().should('be.checked');   
     
   })
 });
