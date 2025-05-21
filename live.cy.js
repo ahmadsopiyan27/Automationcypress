@@ -62,7 +62,10 @@ describe('day 6', async() => {
 
     let checkbox =`//input[@type='checkbox']`;
      await cy.visit('https://demo.automationtesting.in/Register.html');
-     await cy.xpath(checkbox).first().check().should('be.checked');   
+     await cy.xpath(checkbox).first().check().should('be.checked');  
+     await cy.xpath(checkbox).last().check().should('be.checked');
+     await cy.xpath(checkbox).check('Movies').should('be.checked');
+      await cy.xpath(checkbox).eq(2).uncheck().should('be.checked');     
     
   })
 });
