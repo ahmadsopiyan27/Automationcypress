@@ -95,6 +95,9 @@ cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
     await cy.xpath(`//input[@name='username']`).type('Admin');
     await cy.xpath(`//input[@name='password']`).type('admin123');
     await cy.xpath(`//button[@type='submit']`).click();
+    await cy.xpath(`//ul/li[contains(.,'Leave')]`).click();
+    
+
 
     
   })
