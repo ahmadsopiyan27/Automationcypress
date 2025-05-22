@@ -68,7 +68,7 @@ describe('day 6', async() => {
       await cy.xpath(checkbox).eq(2).uncheck().should('be.checked');     
     
   });
-  it('calender', async function () {
+  it.skip('calender', async function () {
     cy.visit('https://jqueryui.com/datepicker/');
 
     // langsung type
@@ -86,6 +86,15 @@ cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
      cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
     .xpath(`//a[@class='ui-state-default' and text()='12']`).click();
 
+
+    
+  });
+
+  it('calender 2', async function name() {
+    await cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    await cy.xpath(`//input[@name='username']`).type('Admin');
+    await cy.xpath(`//input[@name='password']`).type('admin123');
+    await cy.xpath(`//button[@type='submit']`).click();
 
     
   })
