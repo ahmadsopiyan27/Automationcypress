@@ -99,12 +99,14 @@ cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
     await cy.xpath(`//div[@data-v-c93bdbf3 and contains(.,'From Date')]//input`).click();
     
     
-    // Pilih bulan
-    await cy.xpath(`//ul[@class='oxd-calendar-selector']//li[@class='oxd-calendar-selector-month']`).click();
+     // await cy.xpath(`//*[@class='.oxd-calendar-selector-month-selected']`).click();
+        await cy.xpath(`//ul[@class='oxd-calendar-selector']//li[@class='oxd-calendar-selector-month']`).click();
+        await cy.xpath(`//*[@class='oxd-calendar-dropdown']/*[contains(.,'February')]`).click();
+        // await cy.xpath(`//*[@class='oxd-calendar-dropdown']/*[contains(.,'January')]`).click();
 
 
-    //pilih tanggal
-    // await cy.xpath(`//div[@class='oxd-calendar-date' and contains(.,'29')]`).click();
+        // pilih tanggal
+        await cy.xpath(`//div[@class='oxd-calendar-date' and contains(.,'25')]`).click();
 
 
 
