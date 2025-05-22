@@ -96,7 +96,16 @@ cy.get('.demo-frame').its('0.contentDocument.body').then(cy.wrap)
     await cy.xpath(`//input[@name='password']`).type('admin123');
     await cy.xpath(`//button[@type='submit']`).click();
     await cy.xpath(`//ul/li[contains(.,'Leave')]`).click();
+    await cy.xpath(`//div[@data-v-c93bdbf3 and contains(.,'From Date')]//input`).click();
     
+    
+    // Pilih bulan
+    await cy.xpath(`//ul[@class='oxd-calendar-selector']//li[@class='oxd-calendar-selector-month']`).click();
+
+
+    //pilih tanggal
+    // await cy.xpath(`//div[@class='oxd-calendar-date' and contains(.,'29')]`).click();
+
 
 
     
